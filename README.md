@@ -1,32 +1,33 @@
-# La Cosecha — pedidos fáciles
+# Bolsas & Vasos — catálogo y pedidos
 
-Aplicación web sencilla en español para mostrar productos y existencias, armar pedidos, solicitar reservas para retirar, coordinar el pago por WhatsApp, imprimir un ticket y hacer una búsqueda por voz cuando el navegador lo permite.
+Aplicación web en español para vender bolsas para dama y caballero, vasos de diferentes medidas, vasos térmicos y accesorios. Funciona como sitio estático, permite preparar pedidos por WhatsApp y se puede instalar como aplicación web en navegadores compatibles.
 
-## Ejecutar
+## Abrir y comenzar a usar
 
-No requiere instalar paquetes, servidor, base de datos ni claves API.
+1. Abre `index.html` para probar la tienda en tu computadora o teléfono. Para instalarla en el teléfono y usar las funciones sin conexión, publícala primero por HTTPS.
+2. En la parte superior pulsa **Mi tienda**.
+3. Configura el nombre del negocio y el WhatsApp con código de país (solo números, por ejemplo `521...`). Añade instrucciones de pago y ajusta precios y existencias de ejemplo.
+4. Usa **＋ Agregar** para incorporar tus productos reales, modelos, colores, capacidades y fotos/emojis. Los precios y el inventario de inicio son ejemplos editables.
+5. Exporta un respaldo y guárdalo. Comparte con tus clientes la dirección pública de la tienda.
 
-1. Descarga o clona este repositorio.
-2. Abre `index.html` en un navegador moderno. Para micrófono y algunas funciones del navegador, usa una dirección HTTPS; también funciona con `localhost`.
-3. En **Mi tienda**, cambia el nombre, agrega tu WhatsApp con código de país (solo números), define instrucciones o un enlace seguro de pago y ajusta el inventario.
-4. Comparte la página con tus clientes.
+La tienda ya inicia con bolsas para dama y caballero, cangurera, vasos de varias medidas, vaso térmico, termo y monedero. No hay productos de verdura.
 
-También se puede publicar gratis como sitio estático con GitHub Pages: en el repositorio, ve a **Settings → Pages**, elige **Deploy from a branch**, selecciona `feat/ventas-reservas-voz` y la carpeta `/ (root)`, y guarda. GitHub publicará la dirección del sitio cuando termine el despliegue.
+## Publicar gratis con GitHub Pages
 
-## Cómo funciona
+En el repositorio, ve a **Settings → Pages**, elige **Deploy from a branch**, selecciona `feat/ventas-reservas-voz` y la carpeta `/(root)`, y guarda. Cuando Pages publique el sitio, comparte la URL HTTPS que GitHub muestre. No publiques en una rama o carpeta que incluya secretos.
 
-- El cliente filtra productos, ve existencias, agrega cantidades y prepara el pedido.
-- El pedido se abre como mensaje de WhatsApp para que el vendedor lo confirme.
-- Puede solicitar una reserva para retirar en una fecha, imprimir un ticket no fiscal y seguir un enlace de pago configurado por el vendedor.
-- En **Mi tienda** se pueden editar existencias, añadir productos, exportar/importar el respaldo JSON y configurar los datos de contacto.
-- La búsqueda por voz usa Web Speech API si el navegador lo admite; no es necesaria para usar la app.
+La app se puede añadir a la pantalla de inicio desde el menú del navegador. La instalación y el modo sin conexión requieren una URL HTTPS; el sitio de GitHub Pages proporciona HTTPS.
 
-## Importante antes de vender
+## Pedidos y pagos
 
-Esta es una primera versión estática: la configuración e inventario se guardan en el `localStorage` del navegador donde se editan. **No se sincronizan entre el vendedor y los clientes ni entre dispositivos**, por lo que las cantidades que ve cada cliente no son inventario central en tiempo real. El pedido no se confirma automáticamente y la app no procesa pagos ni guarda datos de tarjetas. Confirma existencias, reserva y pago directamente con el cliente. Para disponibilidad compartida y reservas confiables se necesita añadir un backend y una base de datos; para cobros automáticos, integrar un proveedor de pago en el servidor.
+- El cliente filtra el catálogo, elige cantidades y puede pedir entrega/coordinar o solicitar reserva para retirar en una fecha.
+- Al enviar el pedido, se prepara un mensaje para el WhatsApp que configuraste. El cliente y el vendedor coordinan entrega y pago directamente.
+- Opcionalmente puedes poner un enlace seguro HTTPS de cobro de tu proveedor. Se abre el enlace que configures; **esta app no cobra ni confirma pagos automáticamente**.
+- La reserva que pide el cliente es una solicitud: espera confirmación del vendedor. El inventario mostrado no se sincroniza entre distintos teléfonos.
+- No introduzcas datos de tarjeta, contraseñas, tokens ni claves bancarias en la aplicación o en mensajes.
 
-No publiques claves privadas, contraseñas, tokens ni datos bancarios sensibles. Usa únicamente enlaces oficiales de pago y verifica los pagos en la plataforma del proveedor.
+## Límite importante de esta versión
 
-## Respaldo
+Esta edición es una app estática de inicio rápido. Sus productos, precios, pedidos y configuración se guardan localmente en el navegador; los cambios de “Mi tienda” no se sincronizan automáticamente con los teléfonos de los clientes ni con otros dispositivos. Para empezar sin backend, publica el catálogo con tus datos y recibe pedidos por WhatsApp. Para existencias y pedidos compartidos en tiempo real, pagos automáticos, reservas con expiración o administración desde varios teléfonos se necesita añadir un servidor y una base de datos.
 
-En **Mi tienda → Exportar respaldo** descarga el inventario y configuración del navegador actual. Guarda el archivo en un lugar seguro. Importarlo reemplaza la configuración actual del navegador.
+Los valores iniciales son solo ejemplos: sustituye precio y stock por los datos reales antes de compartir la tienda.

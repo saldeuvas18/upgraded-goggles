@@ -1,0 +1,14 @@
+{
+  "name": "Bolsas & Vasos",
+  "short_name": "Bolsas y Vasos",
+  "description": "Catálogo y pedidos de bolsas, vasos y accesorios.",
+  "lang": "es-MX",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf9f2",
+  "theme_color": "#176b4d",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
